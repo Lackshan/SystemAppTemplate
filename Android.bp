@@ -1,0 +1,34 @@
+android_app {
+    name: "SystemAppTemplate",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    static_libs: [
+        "androidx-constraintlayout_constraintlayout",
+        "androidx.core_core",
+        "androidx.legacy_legacy-support-v4",
+        "androidx.appcompat_appcompat",
+        "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout-solver",
+        "androidx.preference_preference",
+    ],
+    platform_apis: true,
+    privileged: true,
+    required: [
+        "permissions_app.systemapptemplate.client.xml",
+        "whitelist_app.systemapptemplate.client.xml"
+    ]
+}
+
+prebuilt_etc {
+    name: "permissions_app.systemapptemplate.client.xml",
+    sub_dir: "permissions",
+    src: "permissions_app.systemapptemplate.client.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "whitelist_app.systemapptemplate.client.xml",
+    sub_dir: "sysconfig",
+    src: "whitelist_app.systemapptemplate.client.xml",
+    filename_from_src: true,
+}
